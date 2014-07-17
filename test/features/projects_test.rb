@@ -9,6 +9,7 @@ feature "Projects" do
     fill_in "Description", with: "A text-editor for OS X"
     click_button 'Create Project'
 
-    assert_content page, 'Project has been created.'
+    assert_content page, "Project has been created."
+
   end
 end

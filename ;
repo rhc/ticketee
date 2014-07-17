@@ -26,6 +26,19 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+
+
 gem "thin"
 gem "slim-rails"
 gem "bootstrap-sass"
@@ -33,7 +46,6 @@ gem "font-awesome-rails"
 gem "bootstrap-datepicker-rails"
 gem "bootstrap-will_paginate"
 gem "simple_form", "~> 3.1.0.rc1", github: "plataformatec/simple_form"
-
 group :development do
   gem "guard-bundler"
   gem "guard-minitest"
@@ -46,7 +58,6 @@ group :development do
   gem "pry-rails"
   gem "rails_layout"
   gem "rails_best_practices"
-  gem "html2slim"
 end
 
 group :test do

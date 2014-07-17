@@ -1,4 +1,3 @@
-
 # vim: ft=ruby
 
 guard :minitest,  spring: 'rake test' do

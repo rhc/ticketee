@@ -49,8 +49,9 @@ group :development do
   gem "html2slim"
 end
 
+gem 'minitest-rails'
+
 group :test do
-  gem "minitest-rails"
   gem "minitest-rails-capybara"
   gem "faker"
 end

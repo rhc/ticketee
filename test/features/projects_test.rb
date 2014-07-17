@@ -11,5 +11,12 @@ feature "Projects" do
 
     assert_content page, "Project has been created."
 
+    #project = Project.where(name: "TextMate 2").first
+    #assert_equal page.current_url, project_url(project)
+
+    title = "TextMate 2 - Projects - Ticketee"
+    assert_equal page.title, title
+
+
   end
 end

@@ -7,6 +7,14 @@ This application has been developed
 while reading http://www.manning.com/bigg2/[Rails in Action 4] book
 by Ryan Bigg, Yehuda Katz, and Steve Klabnik.
 
+When completed, the application will: 
+
+- Track tickets and group them into projects
+- Provide a way to restrick user to certain projects
+- Allow users to upload file to tickets
+- Let users tag ticket so they're easy to find
+- Provide an API on which user can base development of their own applications
+
 
 My goal is to follow along while making the following changes:
 

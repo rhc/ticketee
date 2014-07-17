@@ -1,0 +1,20 @@
+= Ticketee application
+
+
+== Introduction
+
+This application has been developed 
+while reading http://www.manning.com/bigg2/[Rails in Action 4] book
+by Ryan Bigg, Yehuda Katz, and Steve Klabnik.
+
+
+My goal is to follow along while making the following changes:
+
+- Use Minitest instead of RSpec
+- Use Slim instead of erb templates. (I positively hate erb)
+- Use PostgreSql instead of sqlite3
+- Use rbenv insted of Rv
+
+I use a https://github.com/rhc/dotfiles/blob/master/rails/template.rb[rails template file]  to initialize my application
+
+

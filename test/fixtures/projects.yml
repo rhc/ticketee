@@ -8,3 +8,7 @@ textmate:
 vim:
   name: "Vim"
   description: The best editor ever
+
+ie:
+  name: Internet Explorer
+  description: A evil in a browser

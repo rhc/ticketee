@@ -1,10 +1,10 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+textmate:
+  name: TextMate 2
   description: MyString
 
-two:
-  name: MyString
-  description: MyString
+vim:
+  name: "Vim"
+  description: The best editor ever

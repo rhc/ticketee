@@ -1,12 +1,9 @@
-# Read about fixtures at
-# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+feature_request:
+  title: Make it shiny!
+  description: "Gradients! Starbursts! Oh my!"
+  project: textmate
 
-one:
-  title: MyString
-  description: MyText
-  project: 
-
-two:
-  title: MyString
-  description: MyText
-  project: 
+bug_report:
+  title: Standards compliance
+  description: Isn't a joke.
+  project: ie

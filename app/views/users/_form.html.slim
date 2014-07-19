@@ -24,5 +24,8 @@
     = f.text_field :password_confirmation
 
 
-  = f.submit "Sign up"
+  - if @user.new_record?
+    = f.submit "Sign up"
+  - else
+    = f.submit "Update Profile"
   

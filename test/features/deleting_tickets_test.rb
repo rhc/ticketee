@@ -5,7 +5,7 @@ feature "DeletingTickets" do
   let(:ticket) { tickets(:feature_request)}
 
   before do
-    sign_in_as! users(:john)
+    sign_in_as users(:john)
     visit root_path
     click_link project.name
     click_link ticket.title

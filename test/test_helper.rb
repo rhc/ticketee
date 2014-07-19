@@ -17,7 +17,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def sign_in_as!(user)
+  def sign_in_as(user)
     visit '/signin'
     fill_in "Name", with: user.name
     fill_in "Password", with: 'topsecret'

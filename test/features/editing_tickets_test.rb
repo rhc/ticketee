@@ -6,7 +6,7 @@ feature "Editing Tickets" do
   let(:ticket) { tickets(:feature_request)}
   
   before :each do
-    sign_in_as! user
+    sign_in_as user
 
     visit root_path
     click_link project.name

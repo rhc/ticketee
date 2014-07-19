@@ -4,7 +4,7 @@
 john:
   name: John
   email: jkyony@domain.com
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create( "topsecret", cost: 4) %>
 
 two:
   name: MyString

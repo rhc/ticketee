@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     resources :tickets
   end
 
+  get "/signin", to: "sessions#new"
+  post "/signin", to: "sessions#create"
+
+
 end

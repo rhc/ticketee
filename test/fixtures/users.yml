@@ -5,8 +5,17 @@ john:
   name: John
   email: jkyony@example.com
   password_digest: <%= BCrypt::Password.create( "topsecret", cost: 4) %>
+  admin: false
 
 glen:
   name: Glen
   email: gkyony@example.com
   password_digest: <%= BCrypt::Password.create( "topsecret", cost: 4) %>
+  admin: false
+
+admin:
+  name: Alain
+  email: akyony@example.com
+  password_digest: <%= BCrypt::Password.create( "topsecret", cost: 4) %>
+  admin: true
+

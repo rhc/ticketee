@@ -1,10 +1,13 @@
 require "test_helper"
 
 feature "Editing Tickets" do
+  let(:user) { users(:john)}
   let(:project ) {projects(:textmate) }
   let(:ticket) { tickets(:feature_request)}
   
   before :each do
+    sign_in_as! user
+
     visit root_path
     click_link project.name
     click_link ticket.title

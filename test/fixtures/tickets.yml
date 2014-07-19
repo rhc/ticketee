@@ -2,8 +2,10 @@ feature_request:
   title: Make it shiny!
   description: "Gradients! Starbursts! Oh my!"
   project: textmate
+  user: john
 
 bug_report:
   title: Standards compliance
   description: Isn't a joke.
   project: ie
+  user: glen

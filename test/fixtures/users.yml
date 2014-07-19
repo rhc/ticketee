@@ -3,10 +3,10 @@
 
 john:
   name: John
-  email: jkyony@domain.com
+  email: jkyony@example.com
   password_digest: <%= BCrypt::Password.create( "topsecret", cost: 4) %>
 
-two:
-  name: MyString
-  email: MyString
-  password_digest: MyString
+glen:
+  name: Glen
+  email: gkyony@example.com
+  password_digest: <%= BCrypt::Password.create( "topsecret", cost: 4) %>

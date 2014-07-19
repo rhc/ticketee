@@ -8,6 +8,7 @@ require "minitest/rails/capybara"
 require "minitest/pride"
 #require 'minitest/focus'
 #require 'minitest/colorize'
+#
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
@@ -16,7 +17,13 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  #
+  def sign_in_as!(user)
+    visit '/signin'
+    fill_in "Name", with: user.name
+    fill_in "Password", with: 'topsecret'
+    click_button 'Sign in'
+  end
+
 end
 
 #Capybara driver

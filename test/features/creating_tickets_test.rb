@@ -2,18 +2,34 @@ require "test_helper"
 
 feature "Creating Tickets" do
   before do
+    project = projects(:ie)
+    user = users(:john)
     visit root_path
-    click_link "Internet Explorer"
+    click_link  project.name
     click_link "New Ticket"
+    message = "You need to sign in or sign up before continuing."
+    assert_content message
+
+    fill_in "Name", with: user.name
+    fill_in "Password", with: 'topsecret'
+    click_button "Sign in"
+
+    click_link project.name
+    click_link "New Ticket"
+
   end
 
 
-  scenario "I can create a ticket" do
+  scenario "User can create a ticket" do
     fill_in "Title", with: "Non-standards compliance"
     fill_in "Description", with: "My pages are ugly"
     click_button "Create Ticket"
 
     assert_content page, "Ticket has been created"
+
+    within "#ticket #author" do
+      assert_content "Created by jkyony@example.com"
+    end
   end
 
   scenario "I can not create a ticket without valid attributes" do

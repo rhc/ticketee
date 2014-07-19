@@ -3,6 +3,7 @@ require "test_helper"
 feature "ViewingTickets" do
 
   before do
+    user = users(:john)
     visit root_path
   end
 
@@ -13,7 +14,6 @@ feature "ViewingTickets" do
     refute_content "Standards compliance"
 
     click_link "Make it shiny!"
-    assert_content page, "mess" 
     within("#ticket h2") do
       assert_content "Make it shiny!"
     end

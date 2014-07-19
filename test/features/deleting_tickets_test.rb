@@ -5,6 +5,7 @@ feature "DeletingTickets" do
   let(:ticket) { tickets(:feature_request)}
 
   before do
+    sign_in_as! users(:john)
     visit root_path
     click_link project.name
     click_link ticket.title
@@ -16,4 +17,5 @@ feature "DeletingTickets" do
     assert_content "Ticket has been deleted."
     assert_equal page.current_path, project_path(project)
   end
+
 end

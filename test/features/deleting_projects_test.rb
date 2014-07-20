@@ -1,7 +1,8 @@
 require "test_helper"
 
-feature "DeletingProjects" do
-  scenario "the test is sound" do
+feature "To manage projects as administrator" do
+  scenario "I can delete project" do
+    sign_in_as users(:admin)
     visit root_path
     click_link "TextMate 2"
     click_link "Delete Project"

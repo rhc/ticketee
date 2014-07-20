@@ -3,6 +3,7 @@ require "test_helper"
 feature "EditingProjects" do
 
   before do 
+    sign_in_as users(:admin)
     visit root_path
     click_link "TextMate 2"
     click_link "Edit Project"

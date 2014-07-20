@@ -2,13 +2,14 @@ require "test_helper"
 
 feature "Projects" do
 
-  before  do
+before  do
+    sign_in_as users(:admin)
     visit root_path
     click_link "New Project"
   end
 
 
-  scenario "creating projects" do
+  scenario "An administrator can create projects" do
 
     fill_in "Name", with: 'TextMate 2'
     fill_in "Description", with: "A text-editor for OS X"

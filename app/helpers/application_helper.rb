@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
   def title(*parts)
     unless parts.empty?
       content_for :title do
@@ -6,4 +7,8 @@ module ApplicationHelper
       end
     end
   end
+
+
+
+
 end

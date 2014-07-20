@@ -17,12 +17,21 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  #
+  # feature 
   def sign_in_as(user)
     visit '/signin'
     fill_in "Name", with: user.name
     fill_in "Password", with: 'topsecret'
     click_button 'Sign in'
   end
+
+  # in controllers
+  def sign_in user
+    session[:user_id] = user.id
+  end
+
+
 
 end
 

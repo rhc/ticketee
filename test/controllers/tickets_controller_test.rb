@@ -6,12 +6,27 @@ describe TicketsController do
   let(:ticket) { tickets(:feature_request) }
 
   describe "standard users" do
-    it "cannot access a ticket fo a project" do
-      sign_in(user)
-      get :show, id: ticket.id, project_id: project.id
+    describe "with permission to view the project" do
+      before :each do
+        sign_in(user)
+        define_permission(user, 'view', project)
+      end
+  
+      it "cannot begin to create a ticket" do
+        get :new, project_id: project.id
+        assert_cannot_create_tickets
+      end
 
-      assert_redirected_to root_path
-      assert_equal flash[:alert], "The project you were looking for could not be found."
+      it "cannot create a ticket without permission" do
+        post :create, project_id: project.id
+        assert_cannot_create_tickets
+      end
+
+    def assert_cannot_create_tickets
+      assert_redirected_to project
+      assert_equal flash[:alert], "You cannot create tickets on this project."
     end
   end
+ end
+
 end

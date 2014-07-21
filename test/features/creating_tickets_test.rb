@@ -1,10 +1,12 @@
 require "test_helper"
 
 feature "Creating Tickets" do
+  let(:user) { users(:john) }
+  let(:project) {projects(:ie)  }
+
   before do
-    project = projects(:ie)
-    user = users(:john)
     define_permission(user, 'view', project)
+    define_permission(user, "create tickets", project)
     sign_in_as user
     
     visit root_path

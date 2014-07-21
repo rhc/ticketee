@@ -12,3 +12,7 @@ vim:
 ie:
   name: Internet Explorer
   description: A evil in a browser
+
+hidden:
+  name: Super Ghost
+  description: For your eyes only

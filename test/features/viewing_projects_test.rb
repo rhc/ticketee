@@ -10,9 +10,14 @@ feature "Viewing Projects" do
   end
 
   scenario "Listing all projects" do
+    hidden = projects(:hidden)
     visit root_path
+    refute_content hidden.name
+
     click_link project.name 
     #assert_equal page.current_url.split("/").last, project_url(project).split('/').last
     assert_equal page.current_url.split("/").last, project_url(project).split('/').last
+
+
   end
 end

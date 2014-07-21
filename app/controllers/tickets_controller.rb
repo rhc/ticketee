@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
 
   before_action :set_project
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
-  before_action :require_signin!, except: [:show, :index]
+  before_action :require_signin, except: [:show, :index]
 
   def new
     @ticket = @project.tickets.build
@@ -47,7 +47,7 @@ class TicketsController < ApplicationController
 
   
   def set_project 
-    @project = Project.find(params[:project_id])
+    @project = Project.viewable_by(current_user).find(params[:project_id])
   end
 
   def set_ticket 

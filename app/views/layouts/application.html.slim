@@ -12,13 +12,14 @@ html
   body
     nav
       ul
+        li = link_to "Sign up", new_user_path
+        li = link_to "Sign in", signin_path
         - if current_user
           = "Signed in as #{current_user.email}"
+          li = link_to "Sign out", "#"
           - admins_only do
             li = link_to "Admin", admin_root_path
         - else
-          li = link_to "Sign up", new_user_path
-          li = link_to "Sign in", signin_path
 
     - flash.each do |key,value|
       div class='flash' id="#{key}"

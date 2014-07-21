@@ -6,6 +6,7 @@ feature "Editing Tickets" do
   let(:ticket) { tickets(:feature_request)}
   
   before :each do
+    define_permission user, 'view', project
     sign_in_as user
 
     visit root_path

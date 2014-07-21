@@ -4,19 +4,12 @@ feature "Creating Tickets" do
   before do
     project = projects(:ie)
     user = users(:john)
+    define_permission(user, 'view', project)
+    sign_in_as user
+    
     visit root_path
     click_link  project.name
     click_link "New Ticket"
-    message = "You need to sign in or sign up before continuing."
-    assert_content message
-
-    fill_in "Name", with: user.name
-    fill_in "Password", with: 'topsecret'
-    click_button "Sign in"
-
-    click_link project.name
-    click_link "New Ticket"
-
   end
 
 

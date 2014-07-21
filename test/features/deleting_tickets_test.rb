@@ -3,9 +3,11 @@ require "test_helper"
 feature "DeletingTickets" do
   let(:project) { projects(:textmate)}
   let(:ticket) { tickets(:feature_request)}
+  let(:user) { users(:john)  }
 
   before do
-    sign_in_as users(:john)
+    define_permission user, 'view', project
+    sign_in_as user
     visit root_path
     click_link project.name
     click_link ticket.title
